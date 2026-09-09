@@ -86,7 +86,8 @@ runFigRGRN <- function(ATAC.se, # SE of scATAC peak counts. Needed for chromVAR 
 
   if(grepl("hg",genome)){
     pwm <- readRDS(paste0(packagePath,"/data/cisBP_human_pfms_2021.rds"))
-  } else {
+  }
+  if(grepl("mm",genome)){
     pwm <- readRDS(paste0(packagePath,"/data/cisBP_mouse_pfms_2021.rds"))
   }
 
