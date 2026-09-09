@@ -78,6 +78,8 @@ runFigRGRN <- function(ATAC.se, # SE of scATAC peak counts. Needed for chromVAR 
       myGenome <- BSgenome.Mmusculus.UCSC.mm10::BSgenome.Mmusculus.UCSC.mm10
     if (genome %in% "hg38")
       myGenome <- BSgenome.Hsapiens.UCSC.hg38::BSgenome.Hsapiens.UCSC.hg38
+    if (genome %in% "mm39")
+      myGenome <- BSgenome.Hsapiens.UCSC.mm39::BSgenome.Hsapiens.UCSC.mm39
     ATAC.se <- chromVAR::addGCBias(ATAC.se, genome = myGenome)
   }
 
